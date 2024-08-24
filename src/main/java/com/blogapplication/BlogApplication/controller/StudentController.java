@@ -12,8 +12,10 @@ public class StudentController {
         Student student=new Student(1,"shiva","charan");
         return student;
     }
+    //getmapping
     @GetMapping("students/{id}")
     public Student studentwithpathvariable(@PathVariable("id") int studentid){
         return new Student(studentid,"s","c");
     }
+
 }
