@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.extern.apachecommons.CommonsLog;
 
+import java.util.List;
+import java.util.Set;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -51,5 +54,6 @@ public class Post {
     private String title;
     private String description;
     private String content;
-
+    @OneToMany(mappedBy ="post",cascade = CascadeType.ALL)
+   private Set<Comment> post;
 }
